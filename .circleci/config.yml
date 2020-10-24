@@ -1,4 +1,4 @@
- version: 2.1 # Use version 2.1 config to get access to orbs, pipelines
+ version: 2.1 # Use version 2.1 config to get access to orbs, pipelinesaas
 
  orbs:
    azure-acr: circleci/azure-acr@0.2.0 # Use the Azure ACR orb in your config
