@@ -30,7 +30,7 @@ app.use("/rescuesRoute/", rescuesRoute);
 const productsRoute = require("./routes/products");
 app.use("/productsRoute/", productsRoute);
 
-// Serve static assets if in production
+// Serve static assets if in productiondd
 
 if (process.env.NODE_ENV === "production") {
 	// Set static folder

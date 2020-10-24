@@ -9,7 +9,7 @@ frontend/.pnp
 frontend/coverage 
 
 # production
-#frontend/build
+#frontend/builddd
 
 # misc
 .DS_Store
