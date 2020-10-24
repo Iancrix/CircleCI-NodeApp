@@ -43,7 +43,7 @@ if (process.env.NODE_ENV === "production") {
 console.log("Testing...");
 // DB Connection
 mongoose
-	.connect(process.env.MONGODB_URI, {
+	.connect("mongodb+srv://Iancrix:12345@cluster0-yfli3.gcp.mongodb.net/petworld?retryWrites=true&w=majority", {
 		useNewUrlParser: true,
 		useCreateIndex: true,
 		useUnifiedTopology: true,
