@@ -19,7 +19,7 @@ app.use(
 );
 app.use(express.json());
 
-// Import Routesdd
+// Import Routes
 
 const petsRoute = require("./routes/pets");
 app.use("/petsRoute/", petsRoute);
@@ -30,15 +30,15 @@ app.use("/rescuesRoute/", rescuesRoute);
 const productsRoute = require("./routes/products");
 app.use("/productsRoute/", productsRoute);
 
-// Serve static assets if in productiondd
+// Serve static assets if in production
 
-if (process.env.NODE_ENV === "production") {
-	// Set static folder
-	app.use(express.static("./frontend/build"));
-	app.get("*", (req, res) => {
-		res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-	});
-}
+//if (process.env.NODE_ENV === "production") {
+// Set static folder
+app.use(express.static("./frontend/build"));
+app.get("*", (req, res) => {
+	res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+});
+//}
 
 console.log("Testing...");
 // DB Connection
