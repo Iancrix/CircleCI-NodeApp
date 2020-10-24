@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-             ssh $SSH_USER@$SSH_HOST "echo Hello > hello.txt"
+             ssh $SSH_USER@$SSH_HOST "cd CircleCI-NodeApp && git pull && npm run deploy"
 
 workflows:
   version: 2
