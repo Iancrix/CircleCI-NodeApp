@@ -40,6 +40,7 @@ if (process.env.NODE_ENV === "production") {
 	});
 }
 
+console.log("Testing...");
 // DB Connection
 mongoose
 	.connect(process.env.MONGODB_URI, {
