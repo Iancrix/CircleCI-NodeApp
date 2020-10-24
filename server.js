@@ -7,8 +7,8 @@ require("dotenv/config");
 
 //console.log(path.resolve(__dirname, "frontend", "build", "index.html"));qswqwdqw
 const app = express();
-const PORT = process.env.PORT || 80;
-const HOST = "localhost";
+const PORT = process.env.PORT || 5000;
+//const HOST = "localhost";
 
 // Middleware
 app.use(cors());
@@ -52,4 +52,4 @@ mongoose
 	.catch(err => console.log("Connection REFUSED"));
 
 // Server Init
-app.listen(PORT, HOST, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT/*, HOST*/, () => console.log(`Server started on port ${PORT}`));
