@@ -1,0 +1,104 @@
+@font-face {
+	font-family: BreeSerif;
+	src: url(/fonts/BreeSerif-Regular.ttf);
+}
+
+.list-item-container {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 20px 20px 20px 20px;
+	/*padding: 20px 50px 20px 0;*/
+	margin-bottom: 1em;
+	background: #ef5866;
+	color: white;
+}
+
+.list-item-img {
+	flex-shrink: 0;
+	height: 200px;
+	padding: 0 24px;
+	margin: 0 auto;
+	/*width: 180px;*/
+}
+
+.img-item {
+	display: block;
+	object-fit: contain;
+	height: 100%;
+	width: 100%;
+}
+
+.list-item-info {
+	margin-top: 1em;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.item-name {
+	margin-bottom: 10px;
+}
+
+.item-name-txt {
+	font-size: 1.5rem;
+	font-weight: 300;
+	font-family: BreeSerif;
+}
+
+.price-tag-symbol {
+	margin-right: 6px;
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: #00a6ff;
+}
+
+.item-price {
+	margin-bottom: 20px;
+}
+
+.item-price-txt {
+	font-size: 1.2rem;
+	font-weight: 400;
+	font-family: BreeSerif;
+	color: white;
+}
+
+.box-shadow-3d {
+	box-shadow: 1px 1px 0px #00a6ff, 2px 2px 0px #00a6ff, 3px 3px 0px #00a6ff,
+		4px 4px 0px #00a6ff, 5px 5px 0px #00a6ff, 6px 6px 0px #00a6ff;
+}
+
+.item-units {
+	margin-bottom: 7px;
+}
+
+.item-units-txt {
+	font-size: 1rem;
+	font-family: BreeSerif;
+}
+
+.item-category-txt {
+	font-size: 1rem;
+	font-family: BreeSerif;
+}
+
+@media (min-width: 500px) {
+	.list-item-container {
+		flex-direction: row;
+		padding: 20px 50px 20px 0;
+	}
+
+	.list-item-img {
+		width: 180px;
+	}
+
+	.list-item-info {
+		margin-top: 0em;
+	}
+
+	.list-item-img {
+		height: 150px;
+		padding: 0 12px;
+	}
+}
