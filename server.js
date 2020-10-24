@@ -8,7 +8,7 @@ require("dotenv/config");
 //console.log(path.resolve(__dirname, "frontend", "build", "index.html"));qswqw
 const app = express();
 const PORT = process.env.PORT || 80;
-const HOST = "23.99.202.204";
+const HOST = "0.0.0.0";
 
 // Middleware
 app.use(cors());
