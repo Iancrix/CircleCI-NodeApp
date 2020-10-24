@@ -5,7 +5,7 @@ const path = require("path");
 
 require("dotenv/config");
 
-//console.log(path.resolve(__dirname, "frontend", "build", "index.html"));qswqw
+//console.log(path.resolve(__dirname, "frontend", "build", "index.html"));qswqwdqw
 const app = express();
 const PORT = process.env.PORT || 80;
 const HOST = "0.0.0.0";
