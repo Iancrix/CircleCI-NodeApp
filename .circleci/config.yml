@@ -17,3 +17,4 @@
            filters:
              branches:
                only: master # Only deploys when the commit is on the Master branch
+
