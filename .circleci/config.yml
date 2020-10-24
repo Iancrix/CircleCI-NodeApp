@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh $SSH_USER@$SSH_HOST "echo "hola que tal jajajajaaj"
+            ssh $SSH_USER@$SSH_HOST "echo 'hola'"
 
 workflows:
   version: 2
