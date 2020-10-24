@@ -4,7 +4,7 @@
 	"description": "PetWorld Project - MERN Stack Application",
 	"main": "server.js",
 	"scripts": {
-		"start": "pm2 start server.js",
+		"start": "pm2 -f start server.js",
 		"dev": "nodemon server",
 		"deploy": "npm install --prefix frontend && npm run build --prefix frontend  && npm install && npm run start"
 	},
