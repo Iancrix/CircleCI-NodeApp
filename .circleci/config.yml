@@ -1,7 +1,17 @@
-version: 2.1
+version: 2.1 # Use version 2.1 config to get access to orbs, pipelines
+
 orbs:
-  node: circleci/node@3.0.0
-workflows:
-  node-tests:
+  azure-acr: circleci/azure-acr@x.y.z # Use the Azure ACR orb in your config
+
+  workflows:
+  build-deploy:
     jobs:
-      - node/test
+      - azure/build-and-push-image:
+          dockerfile: Dockerfile # defaults to `Dockerfile`
+          path: ./Dockerfile # Defaults to working directory
+          login-server-name: containerregistrycd.azurecr.io # e.g. {yourregistryname}.azure.io
+          registry-name: containerregistrycd
+          repo: https://github.com/Iancrix/CircleCI-NodeApp.git
+          filters:
+          branches:
+            only: develop # Only deploys when the commit is on the Master branch
