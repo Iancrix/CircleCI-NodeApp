@@ -8,8 +8,8 @@ frontend/.pnp
 # testing
 frontend/coverage 
 
-# production
-#frontend/builddd
+# productionaws
+frontend/build
 
 # misc
 .DS_Store
