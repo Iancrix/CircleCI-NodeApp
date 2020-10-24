@@ -200,7 +200,7 @@ class PetSection extends Component {
 		});
 		axios
 			.get(
-				`http://localhost:5000/petsRoute/${this.props.match.params.animalType}/count`
+				`http://23.99.202.204:5000/petsRoute/${this.props.match.params.animalType}/count`
 			)
 			.then(res => {
 				//console.log(res.data);
@@ -267,7 +267,7 @@ class PetSection extends Component {
 			console.log("location changed !!!");
 			axios
 				.get(
-					`http://localhost:5000/petsRoute/${this.props.match.params.animalType}/filter${this.props.history.location.search}`
+					`http://23.99.202.204:5000/petsRoute/${this.props.match.params.animalType}/filter${this.props.history.location.search}`
 				)
 				.then(res => {
 					this.setState({
