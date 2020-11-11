@@ -1,0 +1,23 @@
+.insert-button{
+    padding: 0.7em 1.5em;
+    font-family: BreeSerif;
+    color: white;
+
+    font-size: 1.5rem;
+    
+    background:  #d2e603;
+    border: none
+}
+
+.insert-button:hover{
+    background:  #eff48e;
+}
+
+.bg-image{
+    background: #fcf4fc;
+    min-height: 625px;
+}
+
+#file-input{
+    margin: 2em 0em;
+}

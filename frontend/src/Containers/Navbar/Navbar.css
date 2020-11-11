@@ -378,6 +378,22 @@
 	background: #5ec5ff;
 }
 
+.green{
+	background: #2ec1ac;
+}
+
+.green-h:hover{
+	background: #3e978b;
+}
+
+.light-green{
+	background: #d2e603;
+}
+
+.light-green-h:hover{
+	background: #eff48e;
+}
+
 .dropdown-sidemenu::-webkit-scrollbar {
 	width: 10px;
 	height: 10px;

@@ -1,0 +1,47 @@
+.btn-images{
+    padding: 0.7em 1.5em;
+    font-family: BreeSerif;
+    color: white;
+
+    font-size: 1.5rem;
+    
+    background:  #2ec1ac;
+    border: none
+}
+
+.btn-images:hover{
+    background:  #3e978b;
+}
+
+.bg-image{
+    background: #fcf4fc;
+    text-align: center;
+
+    /*
+    min-height: 650px;
+    height: auto;*/
+}
+
+.title-image{
+    font-family: BreeSerif;
+    font-size: 2rem;
+
+    padding: 1em 0em;
+}
+
+.image-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    width: 99.85%;
+    list-style: none;
+    text-decoration: none;
+
+    margin-top: 2em;
+}
+
+.img-it{
+    height: 250px;
+    width: 250px;
+}
