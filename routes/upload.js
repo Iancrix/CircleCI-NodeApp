@@ -53,7 +53,7 @@ router.post('/', singleFileUpload.single('image'), imageUpload);
 
 //const { azureBlob } = require('..//utils/azureblob');
 
-var blobService = azureStorage.createBlobService();
+var blobService = azureStorage.createBlobService(azureStorageConfig.accountName, azureStorageConfig.accountKey);
 var containerName = azureStorageConfig.containerName;
 
 var blobs = [];
