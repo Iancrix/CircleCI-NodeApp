@@ -14,7 +14,7 @@ jobs:
           command: |
              ssh $SSH_USER@$SSH_HOST "cd CircleCI-NodeApp && git pull && npm run deploy"
 
-  deployProduction:
+  deployDevelop:
     machine:
       enabled: true
     steps:
