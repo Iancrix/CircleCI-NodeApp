@@ -9,10 +9,13 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "29:b0:81:51:1d:74:07:22:fd:e6:92:7c:62:21:e3:66"
+            - "3f:5e:58:fe:85:64:5b:89:1f:5c:d2:cd:3f:b4:06:c2"
       - run:
           name: Deploy Over SSH
           command: |
              ssh $SSH_USER@$SSH_HOST "cd CircleCI-NodeApp && git pull && npm run deploy"
+          command: |
+             ssh $SSH_USER@$SSH_HOST_2 "cd CircleCI-NodeApp && git pull && npm run deploy"
 
   deployDevelop:
     machine:
