@@ -16,7 +16,7 @@ class ShowImages extends Component {
         var imagesUrl = [];
 
         //const URL_endpoint = "https://bucketimagesti.blob.core.windows.net/container-images/";
-        const URL_endpoint = "https://bucketimagestiv2.blob.core.windows.net/container-images-v2";
+        const URL_endpoint = "https://bucketimagestiv2.blob.core.windows.net/container-images-v2/";
         for (var i = 0; i < blobsList.length; i++) {
             var imageUrl = URL_endpoint + blobsList[i].name;
             imagesUrl.push(imageUrl);
