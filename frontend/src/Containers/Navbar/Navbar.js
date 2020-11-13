@@ -50,9 +50,9 @@ class Navbar extends Component {
 		if (this.state.isMobileResponsive) {
 			return this.state.showMobileMenu
 				? {
-						display: "block",
-						animation: "slide-out 0.5s forwards",
-				  }
+					display: "block",
+					animation: "slide-out 0.5s forwards",
+				}
 				: { display: "none", animation: "slide-in 0.5s forwards" };
 		} else {
 			return {};
@@ -112,6 +112,24 @@ class Navbar extends Component {
 										content="PRODUCTS"
 										color="blue"
 										hasSidemenu={true}
+										setStyleSidemenu={this.changeStyleSM}
+										isMobileResponsive={this.state.isMobileResponsive}
+									/>
+									<Navitem
+										path="show"
+										name="show"
+										content="SHOW"
+										color="green"
+										hasSidemenu={false}
+										setStyleSidemenu={this.changeStyleSM}
+										isMobileResponsive={this.state.isMobileResponsive}
+									/>
+									<Navitem
+										path="upload"
+										name="show"
+										content="UPLOAD"
+										color="light-green"
+										hasSidemenu={false}
 										setStyleSidemenu={this.changeStyleSM}
 										isMobileResponsive={this.state.isMobileResponsive}
 									/>
