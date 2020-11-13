@@ -125,7 +125,7 @@ class Navbar extends Component {
 										isMobileResponsive={this.state.isMobileResponsive}
 									/>
 									<Navitem
-										path="upload"
+										path="upload2"
 										name="show"
 										content="UPLOAD"
 										color="light-green"

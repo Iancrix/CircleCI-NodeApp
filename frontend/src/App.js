@@ -88,7 +88,7 @@ class App extends Component {
 
 				<Route
 					exact
-					path="/upload"
+					path="/upload2"
 					render={props => (
 						<React.Fragment>
 							<Navbar />
