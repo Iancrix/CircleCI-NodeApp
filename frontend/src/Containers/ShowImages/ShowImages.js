@@ -29,7 +29,7 @@ class ShowImages extends Component {
     fetchImages = () => {
         axios
             .get(
-                `http://157.55.187.241:5000/upload`
+                `http://localhost:8080/upload`
             )
             .then(res => {
                 this.setImages(res.data)
