@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-             ssh $SSH_USER@$SSH_HOST_3 "cd CircleCI-NodeApp && git pull && npm run test"
+             ssh $SSH_USER@$SSH_HOST_3 "cd CircleCI-NodeApp && git pull && npm test --prefix frontend"
       - run:
           name: Deploy Over SSH
           command: |
