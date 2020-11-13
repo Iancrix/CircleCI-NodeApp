@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 //const HOST = "localhost";
 
-// Middleware
+// Middleware lol
 app.use(cors());
 app.use(
 	express.urlencoded({
