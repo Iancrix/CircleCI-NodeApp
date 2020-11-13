@@ -14,6 +14,8 @@ jobs:
           name: Deploy Over SSH
           command: |
              ssh $SSH_USER@$SSH_HOST "cd CircleCI-NodeApp && git pull && npm run deploy"
+      - run:
+          name: Deploy Over SSH 2
           command: |
              ssh $SSH_USER@$SSH_HOST_2 "cd CircleCI-NodeApp && git pull && npm run deploy"
 
