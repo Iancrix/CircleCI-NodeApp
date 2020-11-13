@@ -2,7 +2,19 @@ version: 2.1
 jobs:
   #build:
     #...
-  deploy:
+  deployProduction:
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "29:b0:81:51:1d:74:07:22:fd:e6:92:7c:62:21:e3:66"
+      - run:
+          name: Deploy Over SSH
+          command: |
+             ssh $SSH_USER@$SSH_HOST "cd CircleCI-NodeApp && git pull && npm run deploy"
+
+  deployProduction:
     machine:
       enabled: true
     steps:
@@ -19,9 +31,16 @@ workflows:
   build-and-deploy:
     jobs:
       #- build
-      - deploy:
+      - deployProduction:
           #requires:
           #  - build # only deploy once build job has completed
           filters:
             branches:
-              only: develop # only deploy on the master branch
+              only: master # only deploy on the master branch
+
+      #- deployDevelop:
+          #requires:
+            #  - build # only deploy once build job has completed
+            #filters:
+              #branches:
+                #only: develop # only deploy on the develop branch
