@@ -8,11 +8,21 @@ const azureStorage = require('azure-storage');
 const getStream = require('into-stream');
 
 const azureStorageConfig = {
+    accountName: "bucketimagestiv2",
+    accountKey: "lkrNZuvLzmwjfZQ7idZrdPXNzr9XhyDIkYQc8FRu9x2gGLbeQMuP4lAwJz4i4Aj87XUeeiEYpN8LKfOX8Ycobg==",
+    blobURL: "https://bucketimagestiv2.blob.core.windows.net/container-images-v2",
+    containerName: "container-images-v2"
+};
+
+/*
+const azureStorageConfig = {
     accountName: "bucketimagesti",
     accountKey: "0OkmsOm50fzdP9GcrXH+3BLoylai5GjQJFHfIF8EMElLVMOt4R3apYzI2uzl+IJ2fKcUeoyFW+z0j7bpMr/+uQ==",
     blobURL: "https://bucketimagesti.blob.core.windows.net/container-images",
     containerName: "container-images"
 };
+
+*/
 
 const uploadFileToBlob = async (directoryPath, file) => {
     return new Promise((resolve, reject) => {
