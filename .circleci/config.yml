@@ -27,6 +27,10 @@ jobs:
           fingerprints:
             - "be:94:08:47:b2:73:b8:c5:d4:c1:4d:24:50:6a:2b:36"
       - run:
+          name: Run tests
+          command: |
+             ssh $SSH_USER@$SSH_HOST_3 "cd CircleCI-NodeApp && git pull && npm run test"
+      - run:
           name: Deploy Over SSH
           command: |
              ssh $SSH_USER@$SSH_HOST_3 "cd CircleCI-NodeApp && git pull && npm run deploy"
