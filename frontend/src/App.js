@@ -14,92 +14,92 @@ import About from "./Components/About/About";
 import ShowImages from "./Containers/ShowImages/ShowImages";
 import UploadImage from "./Containers/UploadImage/UploadImage";
 
-class App extends Component {>
+class App extends Component {
 	render() {
-	return (
-		<div>
-			<Route
-				exact
-				path="/"
-				render={props => (
-					<React.Fragment>
-						<Navbar />
-						<AnimatedScenery />
-						<Footer />
-					</React.Fragment>
-				)}
-			/>
-			<Route
-				exact
-				path="/pets/pet/:idAnimal"
-				render={props => (
-					<React.Fragment>
-						<Navbar />
-						<PetProfile />
-						<Footer />
-					</React.Fragment>
-				)}
-			/>
-			<Route
-				exact
-				path="/pets/:animalType"
-				render={props => (
-					<React.Fragment>
-						<Navbar />
-						<PetSection />
-						<Footer />
-					</React.Fragment>
-				)}
-			/>
-			<Route
-				exact
-				path="/products/:productType"
-				render={props => (
-					<React.Fragment>
-						<Navbar />
-						<ProductSection />
-						<Footer />
-					</React.Fragment>
-				)}
-			/>
+		return (
+			<div>
+				<Route
+					exact
+					path="/"
+					render={props => (
+						<React.Fragment>
+							<Navbar />
+							<AnimatedScenery />
+							<Footer />
+						</React.Fragment>
+					)}
+				/>
+				<Route
+					exact
+					path="/pets/pet/:idAnimal"
+					render={props => (
+						<React.Fragment>
+							<Navbar />
+							<PetProfile />
+							<Footer />
+						</React.Fragment>
+					)}
+				/>
+				<Route
+					exact
+					path="/pets/:animalType"
+					render={props => (
+						<React.Fragment>
+							<Navbar />
+							<PetSection />
+							<Footer />
+						</React.Fragment>
+					)}
+				/>
+				<Route
+					exact
+					path="/products/:productType"
+					render={props => (
+						<React.Fragment>
+							<Navbar />
+							<ProductSection />
+							<Footer />
+						</React.Fragment>
+					)}
+				/>
 
-			<Route
-				exact
-				path="/about"
-				render={props => (
-					<React.Fragment>
-						<Navbar />
-						<About />
-						<Footer />
-					</React.Fragment>
-				)}
-			/>
+				<Route
+					exact
+					path="/about"
+					render={props => (
+						<React.Fragment>
+							<Navbar />
+							<About />
+							<Footer />
+						</React.Fragment>
+					)}
+				/>
 
-			<Route
-				exact
-				path="/show"
-				render={props => (
-					<React.Fragment>
-						<Navbar />
-						<ShowImages />
-					</React.Fragment>
-				)}
-			/>
+				<Route
+					exact
+					path="/show"
+					render={props => (
+						<React.Fragment>
+							<Navbar />
+							<ShowImages />
+						</React.Fragment>
+					)}
+				/>
 
-			<Route
-				exact
-				path="/upload2"
-				render={props => (
-					<React.Fragment>
-						<Navbar />
-						<UploadImage />
-						<Footer />
-					</React.Fragment>
-				)}
-			/>
-		</div>
-	);
-}
+				<Route
+					exact
+					path="/upload2"
+					render={props => (
+						<React.Fragment>
+							<Navbar />
+							<UploadImage />
+							<Footer />
+						</React.Fragment>
+					)}
+				/>
+			</div>
+		);
+	}
 }
 
 export default App;
