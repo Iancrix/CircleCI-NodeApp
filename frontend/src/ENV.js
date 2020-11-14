@@ -1,0 +1,1 @@
+const _ENV = "prod"; export default _ENV;

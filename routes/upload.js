@@ -7,13 +7,22 @@ const singleFileUpload = multer({ storage: inMemoryStorage });
 const azureStorage = require('azure-storage');
 const getStream = require('into-stream');
 
-const azureStorageConfig = {
+var azureStorageConfig = {
     accountName: "bucketimagesprod",
     accountKey: "u69LghWK/2wMJLXe4Byqnr651TLHQvxS2EOLpBZrvLz6JrgCyogD8R58YK9VD8xrzJnv3F0fZ6pneSW/54BU5g==",
     blobURL: "https://bucketimagesprod.blob.core.windows.net/containet-images-prod",
     containerName: "containet-images-prod"
 };
 
+if (process.env.NODE_ENV !== "production") {
+    azureStorageConfig = {
+        accountName: "bucketimagesdev",
+        accountKey: "CnjeoKeehi8dneyHXn57yudS4zT3FAvdVTYZQCkB6GEoHILRWn8D/ZeINNHdFeowN0lUrpuy7/1RigtrvEwF0g==",
+        blobURL: "https://bucketimagesdev.blob.core.windows.net/container-images-dev",
+        containerName: "container-images-dev"
+    };
+}
+//Helloooo
 const uploadFileToBlob = async (directoryPath, file) => {
     return new Promise((resolve, reject) => {
         const blobName = getBlobName(file.originalname);

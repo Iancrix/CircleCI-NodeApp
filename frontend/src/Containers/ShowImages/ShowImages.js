@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "./ShowImages.css";
 
 import IP from "../../URL";
+import ENV from "../../ENV";
 
 import axios from "axios";
 class ShowImages extends Component {
@@ -20,13 +21,9 @@ class ShowImages extends Component {
 
         var URL_endpoint = "https://bucketimagesprod.blob.core.windows.net/containet-images-prod/";
 
-        /*
-        if (process.env.NODE_ENV !== 'production') {
-            URL_endpoint = "https://bucketimagestiv3.blob.core.windows.net/container-images-dev/";
-            console.log("WE ARE ON PRODUCTION FRONTEND")
+        if (ENV !== 'prod') {
+            URL_endpoint = "https://bucketimagesdev.blob.core.windows.net/container-images-dev/";
         }
-        console.log(URL_endpoint)
-        console.log(process.env.REACT_APP_DEPLOY)*/
 
         for (var i = 0; i < blobsList.length; i++) {
             var imageUrl = URL_endpoint + blobsList[i].name;
