@@ -5,10 +5,8 @@ const path = require("path");
 
 require("dotenv/config");
 
-//console.log(path.resolve(__dirname, "frontend", "build", "index.html"));qswqwdqwwassw
 const app = express();
 const PORT = process.env.PORT || 5000;
-//const HOST = "localhost";
 
 // Middleware lol
 app.use(cors());
@@ -33,21 +31,16 @@ app.use("/productsRoute/", productsRoute);
 const upload = require('./routes/upload');
 app.use('/upload', upload);
 
-// Serve static assets if in production lol
+// Serve static assets if in production lollol
 
 //if (process.env.NODE_ENV === "production") {
-// Set static folder
-
+// Set static folderaacd 
 
 app.use(express.static("./frontend/build"));
 app.get("*", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
 });
 
-
-//}
-
-console.log("Testing...");
 // DB Connection
 mongoose
 	.connect("mongodb+srv://Iancrix:12345@cluster0-yfli3.gcp.mongodb.net/petworld?retryWrites=true&w=majority", {

@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import "./ShowImages.css";
 
+import IP from "../../URL";
+
 import axios from "axios";
 class ShowImages extends Component {
 
     state = {
-        imagesUrl: []
+        imagesUrl: [],
+        public_ip: ""
     }
 
     componentDidMount() {
@@ -15,8 +18,16 @@ class ShowImages extends Component {
     setImages = (blobsList) => {
         var imagesUrl = [];
 
-        //const URL_endpoint = "https://bucketimagesti.blob.core.windows.net/container-images/";
-        const URL_endpoint = "https://bucketimagestiv2.blob.core.windows.net/container-images-v2/";
+        var URL_endpoint = "https://bucketimagesprod.blob.core.windows.net/containet-images-prod/";
+
+        /*
+        if (process.env.NODE_ENV !== 'production') {
+            URL_endpoint = "https://bucketimagestiv3.blob.core.windows.net/container-images-dev/";
+            console.log("WE ARE ON PRODUCTION FRONTEND")
+        }
+        console.log(URL_endpoint)
+        console.log(process.env.REACT_APP_DEPLOY)*/
+
         for (var i = 0; i < blobsList.length; i++) {
             var imageUrl = URL_endpoint + blobsList[i].name;
             imagesUrl.push(imageUrl);
@@ -30,12 +41,13 @@ class ShowImages extends Component {
     fetchImages = () => {
         axios
             .get(
-                `http://localhost:5000/upload`
+                `http://${IP}/upload`
             )
             .then(res => {
                 this.setImages(res.data)
             })
             .catch(e => console.log(e));
+
     }
 
     onClick = (e) => {
@@ -45,7 +57,7 @@ class ShowImages extends Component {
     render() {
         return (
             <div className="bg-image">
-                <h1 className="title-image">Click to get images from Azure Blob Storage:</h1>
+                <h1 className="title-image">Click to get images from Azure Blob Storage222:</h1>
                 <button className="btn-images" onClick={this.onClick}>GET IMAGES</button>
                 <ul className="image-list">
                     {this.state.imagesUrl.map((imageUrl, i) =>
