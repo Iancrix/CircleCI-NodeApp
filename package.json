@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "pm2 -f start server.js",
 		"dev": "nodemon server",
-		"deploy": "REACT_APP_IP=13.66.23.163 && npm install --prefix frontend && npm run build --prefix frontend  && npm install"
+		"deploy": "npm install --prefix frontend && npm run build --prefix frontend  && npm install"
 	},
 	"author": "Ian Chona",
 	"license": "ISC",

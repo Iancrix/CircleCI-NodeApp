@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import "./ShowImages.css";
 
+import IP from "../../URL";
+
 import axios from "axios";
 class ShowImages extends Component {
 
@@ -39,7 +41,7 @@ class ShowImages extends Component {
     fetchImages = () => {
         axios
             .get(
-                `http://${process.env.REACT_APP_IP}/upload`
+                `http://${IP}/upload`
             )
             .then(res => {
                 this.setImages(res.data)
