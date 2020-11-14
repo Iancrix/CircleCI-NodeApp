@@ -42,10 +42,6 @@ app.get("*", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
 });
 
-
-//}
-
-console.log("Testing...");
 // DB Connection
 mongoose
 	.connect("mongodb+srv://Iancrix:12345@cluster0-yfli3.gcp.mongodb.net/petworld?retryWrites=true&w=majority", {

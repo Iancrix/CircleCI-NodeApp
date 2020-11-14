@@ -7,7 +7,6 @@ const singleFileUpload = multer({ storage: inMemoryStorage });
 const azureStorage = require('azure-storage');
 const getStream = require('into-stream');
 
-
 const azureStorageConfig = {
     accountName: "bucketimagesprod",
     accountKey: "u69LghWK/2wMJLXe4Byqnr651TLHQvxS2EOLpBZrvLz6JrgCyogD8R58YK9VD8xrzJnv3F0fZ6pneSW/54BU5g==",
