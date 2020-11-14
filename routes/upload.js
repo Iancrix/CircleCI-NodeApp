@@ -10,7 +10,7 @@ const getStream = require('into-stream');
 
 const azureStorageConfig = {
     accountName: "bucketimagesprod",
-    accountKey: "x8XfB0vTL0+wXHTWZ87l3dwiw6tn9aZUmqU1HQY4s3KHmm5fPy7RyCyR/mRnon8vhKcXHTOV2teXjvju62Mk5Q==",
+    accountKey: "u69LghWK/2wMJLXe4Byqnr651TLHQvxS2EOLpBZrvLz6JrgCyogD8R58YK9VD8xrzJnv3F0fZ6pneSW/54BU5g==",
     blobURL: "https://bucketimagesprod.blob.core.windows.net/containet-images-prod",
     containerName: "containet-images-prod"
 };
@@ -41,6 +41,7 @@ const getBlobName = originalName => {
     const identifier = Math.random().toString().replace(/0\./, ''); // remove "0." from start of string
     return `${identifier}-${originalName}`;
 };
+
 const imageUpload = async (req, res, next) => {
     try {
         const image = await uploadFileToBlob('images', req.file); // images is a directory in the Azure container
