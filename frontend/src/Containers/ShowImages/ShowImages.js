@@ -36,7 +36,7 @@ class ShowImages extends Component {
         });
     }
 
-    fetchImages = async () => {
+    fetchImages = () => {
         axios
             .get(
                 `http://localhost:5000/upload`
