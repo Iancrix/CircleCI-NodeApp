@@ -14,6 +14,15 @@ const azureStorageConfig = {
     containerName: "containet-images-prod"
 };
 
+if (process.env.NODE_ENV !== production) {
+    azureStorageConfig = {
+        accountName: "bucketimagesdev",
+        accountKey: "CnjeoKeehi8dneyHXn57yudS4zT3FAvdVTYZQCkB6GEoHILRWn8D/ZeINNHdFeowN0lUrpuy7/1RigtrvEwF0g==",
+        blobURL: "https://bucketimagesdev.blob.core.windows.net/container-images-dev",
+        containerName: "container-images-dev"
+    };
+}
+
 const uploadFileToBlob = async (directoryPath, file) => {
     return new Promise((resolve, reject) => {
         const blobName = getBlobName(file.originalname);
