@@ -7,21 +7,21 @@ const singleFileUpload = multer({ storage: inMemoryStorage });
 const azureStorage = require('azure-storage');
 const getStream = require('into-stream');
 
-
+/*
 const azureStorageConfig = {
     accountName: "bucketimagestiv2",
     accountKey: "lkrNZuvLzmwjfZQ7idZrdPXNzr9XhyDIkYQc8FRu9x2gGLbeQMuP4lAwJz4i4Aj87XUeeiEYpN8LKfOX8Ycobg==",
     blobURL: "https://bucketimagestiv2.blob.core.windows.net/container-images-v2",
     containerName: "container-images-v2"
-};
+};*/
 
-/*
+
 var azureStorageConfig = {
     accountName: "bucketimagestiv3",
     accountKey: "D/Z60nn4BR/QWDMmwI29AjWJ6xor62/Ey8/ODOsYnSpEB89jSHRWCG9qMHBZM4JZG/hsn1cup/gX2cEczpTyhA==",
     blobURL: "https://bucketimagestiv3.blob.core.windows.net/container-images-dev",
     containerName: "container-images-dev"
-};*/
+};
 
 
 /*
