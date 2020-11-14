@@ -37,8 +37,6 @@ class ShowImages extends Component {
 
     fetchImages = () => {
         const localIpUrl = require('local-ip-url');
-        console.log(localIpUrl)
-
         axios
             .get(
                 `http://${localIpUrl()}:5000/upload`
