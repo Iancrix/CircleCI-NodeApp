@@ -9,13 +9,11 @@ const getStream = require('into-stream');
 
 
 const azureStorageConfig = {
-    accountName: "bucketimagesti",
-    accountKey: "0OkmsOm50fzdP9GcrXH+3BLoylai5GjQJFHfIF8EMElLVMOt4R3apYzI2uzl+IJ2fKcUeoyFW+z0j7bpMr/+uQ==",
-    blobURL: "https://bucketimagesti.blob.core.windows.net/container-images",
-    containerName: "container-images"
+    accountName: "bucketimagesprod",
+    accountKey: "x8XfB0vTL0+wXHTWZ87l3dwiw6tn9aZUmqU1HQY4s3KHmm5fPy7RyCyR/mRnon8vhKcXHTOV2teXjvju62Mk5Q==",
+    blobURL: "https://bucketimagesprod.blob.core.windows.net/containet-images-prod",
+    containerName: "containet-images-prod"
 };
-
-
 
 const uploadFileToBlob = async (directoryPath, file) => {
     return new Promise((resolve, reject) => {
@@ -54,8 +52,6 @@ const imageUpload = async (req, res, next) => {
 
 router.post('/', singleFileUpload.single('image'), imageUpload);
 
-//const { azureBlob } = require('..//utils/azureblob');
-
 var blobService = azureStorage.createBlobService(azureStorageConfig.accountName, azureStorageConfig.accountKey);
 var containerName = azureStorageConfig.containerName;
 
@@ -81,11 +77,8 @@ router.get('/', function (req, res) {
     blobService.listBlobsSegmented(containerName, null, function (err, result) {
         aggregateBlobs(err, result, function (err, blobs) {
             if (err) {
-                //console.log("Couldn't list blobs");
-                //console.error(err);
                 res.status(400).json({ message: err.message });
             } else {
-                //console.log(blobs);
                 res.status(200).json(blobs);
             }
         });

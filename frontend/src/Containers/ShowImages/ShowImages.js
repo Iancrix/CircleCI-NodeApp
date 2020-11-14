@@ -15,7 +15,7 @@ class ShowImages extends Component {
     setImages = (blobsList) => {
         var imagesUrl = [];
 
-        var URL_endpoint = "https://bucketimagesti.blob.core.windows.net/container-images/";
+        var URL_endpoint = "https://bucketimagesprod.blob.core.windows.net/containet-images-prod/";
 
         /*
         if (process.env.NODE_ENV !== 'production') {
