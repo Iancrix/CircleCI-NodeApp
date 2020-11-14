@@ -37,21 +37,9 @@ class ShowImages extends Component {
     }
 
     fetchImages = async () => {
-        await axios
-            .get(
-                `https://jsonip.com/`
-            )
-            .then(res => {
-                this.setState({
-                    public_ip: res.data.ip
-                })
-            })
-            .catch(e => console.log(e));
-
-
         axios
             .get(
-                `http://${this.state.public_ip}/upload`
+                `http://localhost:5000/upload`
             )
             .then(res => {
                 this.setImages(res.data)
