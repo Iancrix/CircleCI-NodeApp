@@ -49,7 +49,7 @@ mongoose
 		useUnifiedTopology: true,
 	})
 	.then(() => console.log("Connected to MongoDB"))
-	.catch(err => console.log("Connection REFUSED"));
+	.catch(err => err);
 
 // Server Init
 app.listen(PORT/*, HOST*/, () => console.log(`Server started on port ${PORT}`));
