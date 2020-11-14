@@ -34,7 +34,7 @@ app.use('/upload', upload);
 // Serve static assets if in production lol
 
 //if (process.env.NODE_ENV === "production") {
-// Set static folder
+// Set static folderaa
 
 
 app.use(express.static("./frontend/build"));
