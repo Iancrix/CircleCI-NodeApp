@@ -31,7 +31,7 @@ app.use("/productsRoute/", productsRoute);
 const upload = require('./routes/upload');
 app.use('/upload', upload);
 
-// Serve static assets if in production lol
+// Serve static assets if in production lollol
 
 //if (process.env.NODE_ENV === "production") {
 // Set static folderaacd 
