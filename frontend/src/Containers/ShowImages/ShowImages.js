@@ -54,7 +54,7 @@ class ShowImages extends Component {
     render() {
         return (
             <div className="bg-image">
-                <h1 className="title-image">Click to get images from Azure Blob Storage:</h1>
+                <h1 className="title-image">Click to get images from Azure Blob Storage222:</h1>
                 <button className="btn-images" onClick={this.onClick}>GET IMAGES</button>
                 <ul className="image-list">
                     {this.state.imagesUrl.map((imageUrl, i) =>
