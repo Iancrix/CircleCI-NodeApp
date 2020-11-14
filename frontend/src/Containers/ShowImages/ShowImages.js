@@ -5,7 +5,8 @@ import axios from "axios";
 class ShowImages extends Component {
 
     state = {
-        imagesUrl: []
+        imagesUrl: [],
+        public_ip: ""
     }
 
     componentDidMount() {
@@ -36,12 +37,21 @@ class ShowImages extends Component {
     }
 
     fetchImages = async () => {
-        const publicIp = require("react-public-ip");
-        const ipv4 = await publicIp.v4() || "";
+        await axios
+            .get(
+                `https://jsonip.com/`
+            )
+            .then(res => {
+                this.setState({
+                    public_ip: res.data.ip
+                })
+            })
+            .catch(e => console.log(e));
+
 
         axios
             .get(
-                `http://${ipv4}/upload`
+                `http://${this.state.public_ip}/upload`
             )
             .then(res => {
                 this.setImages(res.data)
