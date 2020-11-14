@@ -38,7 +38,7 @@ workflows:
       #- build
       - deployProduction:
           #requires:
-          #  - build # only deploy once build job has completeda
+          #  - build # only deploy once build job has completedalol
           filters:
             branches:
               only: master # only deploy on the master branch
