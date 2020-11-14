@@ -15,8 +15,17 @@ class ShowImages extends Component {
     setImages = (blobsList) => {
         var imagesUrl = [];
 
-        //const URL_endpoint = "https://bucketimagesti.blob.core.windows.net/container-images/";
-        const URL_endpoint = "https://bucketimagestiv2.blob.core.windows.net/container-images-v2/";
+        //var URL_endpoint = "https://bucketimagesti.blob.core.windows.net/container-images/";
+        var URL_endpoint = "https://bucketimagestiv2.blob.core.windows.net/container-images-v2/";
+
+        /*
+        if (process.env.NODE_ENV !== 'production') {
+            URL_endpoint = "https://bucketimagestiv3.blob.core.windows.net/container-images-dev/";
+            console.log("WE ARE ON PRODUCTION FRONTEND")
+        }
+        console.log(URL_endpoint)
+        console.log(process.env.REACT_APP_DEPLOY)*/
+
         for (var i = 0; i < blobsList.length; i++) {
             var imageUrl = URL_endpoint + blobsList[i].name;
             imagesUrl.push(imageUrl);

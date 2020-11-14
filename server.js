@@ -5,10 +5,8 @@ const path = require("path");
 
 require("dotenv/config");
 
-//console.log(path.resolve(__dirname, "frontend", "build", "index.html"));qswqwdqwwassw
 const app = express();
 const PORT = process.env.PORT || 5000;
-//const HOST = "localhost";
 
 // Middleware lol
 app.use(cors());
