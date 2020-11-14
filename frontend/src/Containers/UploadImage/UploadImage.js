@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import "./UploadImage.css";
 
+import IP from "../../URL";
+
 import axios from "axios";
 
 class UploadImage extends Component {
@@ -14,7 +16,7 @@ class UploadImage extends Component {
             var formData = new FormData();
             formData.append("image", this.state.selectedFile);
 
-            axios.post('http://localhost:5000/upload', formData, {
+            axios.post(`http://${IP}/upload`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
