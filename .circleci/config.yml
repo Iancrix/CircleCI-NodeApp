@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-             ssh $SSH_USER@$SSH_HOST_3 "cd CircleCI-NodeApp && git pull && echo \*const IP = "$SSH_HOST_3"; export default IP;\* > ./frontend/src/URL.js && npm run deploy"
+             ssh $SSH_USER@$SSH_HOST_3 "cd CircleCI-NodeApp && git pull && echo \"const IP = '$SSH_HOST_3'; export default IP;\" > ./frontend/src/URL.js && npm run deploy"
 
 workflows:
   version: 2
