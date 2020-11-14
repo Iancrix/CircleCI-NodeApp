@@ -14,7 +14,7 @@ const azureStorageConfig = {
     containerName: "containet-images-prod"
 };
 
-if (process.env.NODE_ENV !== production) {
+if (process.env.NODE_ENV !== "production") {
     azureStorageConfig = {
         accountName: "bucketimagesdev",
         accountKey: "CnjeoKeehi8dneyHXn57yudS4zT3FAvdVTYZQCkB6GEoHILRWn8D/ZeINNHdFeowN0lUrpuy7/1RigtrvEwF0g==",

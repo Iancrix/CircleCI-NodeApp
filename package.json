@@ -6,7 +6,8 @@
 	"scripts": {
 		"start": "pm2 -f start server.js",
 		"dev": "nodemon server",
-		"deploy": "NODE_ENV=production && npm install --prefix frontend && npm run build --prefix frontend  && npm install"
+		"deployProd": "NODE_ENV=production && npm install --prefix frontend && npm run build --prefix frontend  && npm install",
+		"deployDev": "NODE_ENV=development && npm install --prefix frontend && npm run build --prefix frontend  && npm install"
 	},
 	"author": "Ian Chona",
 	"license": "ISC",
