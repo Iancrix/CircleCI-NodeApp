@@ -13,11 +13,11 @@ jobs:
       - run:
           name: Deploy Over SSH 
           command: |
-             ssh $SSH_USER@$SSH_HOST "cd CircleCI-NodeApp && git stash && git pull && echo \"const IP = '$SSH_HOST'; export default IP;\" > ./frontend/src/URL.js && echo \"const _ENV = 'prod'; export default _ENV;\" > ./frontend/src/ENV.js && npm run deployProd && pm2 restart server"
+             ssh $SSH_USER@$SSH_HOST "cd CircleCI-NodeApp && git stash && git pull && echo \"const IP = '$SSH_HOST'; export default IP;\" > ./frontend/src/URL.js && echo \"const _ENV = 'prod'; export default _ENV;\" > ./frontend/src/ENV.js && echo \"module.exports = { env_2: 'prod' }\" > ./routes/ENV_2.js && npm run deployProd && pm2 restart server"
       - run:
           name: Deploy Over SSH 2
           command: |
-             ssh $SSH_USER@$SSH_HOST_2 "cd CircleCI-NodeApp && git stash && git pull && echo \"const IP = '$SSH_HOST_2'; export default IP;\" > ./frontend/src/URL.js  && echo \"const _ENV = 'prod'; export default _ENV;\" > ./frontend/src/ENV.js  && npm run deployProd && pm2 restart server"
+             ssh $SSH_USER@$SSH_HOST_2 "cd CircleCI-NodeApp && git stash && git pull && echo \"const IP = '$SSH_HOST_2'; export default IP;\" > ./frontend/src/URL.js  && echo \"const _ENV = 'prod'; export default _ENV;\" > ./frontend/src/ENV.js  && echo \"module.exports = { env_2: 'prod' }\" > ./routes/ENV_2.js && npm run deployProd && pm2 restart server"
 
   deployDevelop:
     machine:
@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-             ssh $SSH_USER@$SSH_HOST_3 "cd CircleCI-NodeApp && git stash && git pull && echo \"const IP = '$SSH_HOST_3'; export default IP;\" > ./frontend/src/URL.js && echo \"const _ENV = 'dev'; export default _ENV;\" > ./frontend/src/ENV.js && npm run deployDev && pm2 restart server"
+             ssh $SSH_USER@$SSH_HOST_3 "cd CircleCI-NodeApp && git stash && git pull && echo \"const IP = '$SSH_HOST_3'; export default IP;\" > ./frontend/src/URL.js && echo \"const _ENV = 'dev'; export default _ENV;\" > ./frontend/src/ENV.js && echo \"module.exports = { env_2: 'dev' }\" > ./routes/ENV_2.js && npm run deployDev && pm2 restart server"
 
 workflows:
   version: 2
