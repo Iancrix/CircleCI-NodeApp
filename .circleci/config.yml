@@ -27,6 +27,26 @@ jobs:
           fingerprints:
             - "	5e:01:c4:15:7e:d9:47:7b:db:0b:f6:e3:4f:5f:36:a0"
       - run:
+          name: Install node@14.0.0 (need right version for yarn)
+          command: |
+            set +e
+            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+            export NVM_DIR="/opt/circleci/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+            nvm install v14.0.0
+            nvm alias default v14.0.0
+
+            # Each step uses the same $BASH_ENV, so need to modify it
+            echo 'export NVM_DIR="/opt/circleci/.nvm"' >> $BASH_ENV
+            echo "[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"" >> $BASH_ENV
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          override-ci-command: npm install
+      - run:
+          name: Run tests
+          command: |
+              ./node_modules/.bin/eslint server.js
+      - run:
           name: Deploy Over SSH
           command: |
              ssh $SSH_USER@$SSH_HOST_3 "cd CircleCI-NodeApp && git stash && git pull && echo \"const IP = '$SSH_HOST_3'; export default IP;\" > ./frontend/src/URL.js && echo \"const _ENV = 'dev'; export default _ENV;\" > ./frontend/src/ENV.js && echo \"module.exports = { env_2: 'dev' }\" > ./routes/ENV_2.js && npm run deployDev && pm2 restart server"
