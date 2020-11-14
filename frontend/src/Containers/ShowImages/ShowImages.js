@@ -35,10 +35,13 @@ class ShowImages extends Component {
         });
     }
 
-    fetchImages = () => {
+    fetchImages = async () => {
+        const publicIp = require("react-public-ip");
+        const ipv4 = await publicIp.v4() || "";
+
         axios
             .get(
-                `http://localhost/upload`
+                `http://${ipv4}/upload`
             )
             .then(res => {
                 this.setImages(res.data)
