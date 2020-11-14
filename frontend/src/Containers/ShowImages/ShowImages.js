@@ -39,7 +39,7 @@ class ShowImages extends Component {
         const localIpUrl = require('local-ip-url');
         axios
             .get(
-                `http://${localIpUrl()}:5000/upload`
+                `http://${localIpUrl('public')}:5000/upload`
             )
             .then(res => {
                 this.setImages(res.data)
